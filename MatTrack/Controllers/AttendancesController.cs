@@ -54,7 +54,7 @@ namespace MatTrack.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AttendanceID,StartDate,Count")] Attendance attendance)
+        public async Task<IActionResult> Create([Bind("AttendanceID,UserId,StartDate,Count")] Attendance attendance)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace MatTrack.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AttendanceID,StartDate,Count")] Attendance attendance)
+        public async Task<IActionResult> Edit(int id, [Bind("AttendanceID,UserId,StartDate,Count")] Attendance attendance)
         {
             if (id != attendance.AttendanceID)
             {
