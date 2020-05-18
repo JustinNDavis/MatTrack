@@ -1,0 +1,74 @@
+﻿@model MatTrack.Models.Users
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Users</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <select asp-for="Rank" class="form-control">
+                    <option value="White">White</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Purple">Purple</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Black">Black</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeightInLbs" class="control-label"></label>
+                <input asp-for="WeightInLbs" class="form-control" />
+                <span asp-validation-for="WeightInLbs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HeightInInch" class="control-label"></label>
+                <input asp-for="HeightInInch" class="form-control" />
+                <span asp-validation-for="HeightInInch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CurrentlyInjured" class="control-label">Injured?</label>
+                <select asp-for="CurrentlyInjured" class="form-control">
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailAddress" class="control-label"></label>
+                <input asp-for="EmailAddress" class="form-control" />
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
